@@ -91,5 +91,6 @@ view: inventory_items {
   measure: percent_of_total {
     type: percent_of_total
     sql: ${count} ;;
+    value_format: "0.00"
   }
 }
