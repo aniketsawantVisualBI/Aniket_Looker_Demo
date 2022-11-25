@@ -90,6 +90,6 @@ view: inventory_items {
   }
   measure: percent_of_total {
     type: percent_of_total
-    sql: $count{product_name} ;;
+    sql: $count{TABLE} / $sum(count{TABLE}) ;;
   }
 }
