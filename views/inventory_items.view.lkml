@@ -14,6 +14,7 @@ view: inventory_items {
     sql: ${TABLE}.cost ;;
   }
 
+
   dimension_group: created {
     type: time
     timeframes: [
@@ -86,5 +87,9 @@ view: inventory_items {
   measure: count {
     type: count
     drill_fields: [id, product_name, products.name, products.id, order_items.count]
+  }
+  measure: percent_of_total {
+    type: percent_of_total
+    sql: $count{product_name} ;;
   }
 }
